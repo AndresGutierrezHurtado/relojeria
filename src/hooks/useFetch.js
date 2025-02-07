@@ -5,24 +5,6 @@ import { products } from "../mocks/products.json";
 
 export const queryApi = async () => {
     try {
-        // const response = await fetch(import.meta.env.VITE_WEBHOOK, options);
-        // const { products } = await response.json();
-
-
-        // if (result.success && showSuccessMessage) {
-        //     Swal.fire({
-        //         icon: "success",
-        //         title: "Acción exitosa",
-        //         text: result.message,
-        //     });
-        // } else if (!result.success && showSuccessMessage) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "Acción fallida",
-        //         text: result.message,
-        //     });
-        // }
-
         return {
             success: true,
             message: "Acción exitosa",
