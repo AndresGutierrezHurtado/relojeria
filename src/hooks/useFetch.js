@@ -29,7 +29,7 @@ export const queryApi = async () => {
             data: products.map((p) => ({
                 product_image: p.product_image,
                 product_name: p.product_name,
-                product_price: parseInt(p.product_price.replace("$", "").replace(".", "")),
+                product_price: parseInt(p.product_discount.replace("$", "").replace(".", "")),
             })),
         };
     } catch (error) {
