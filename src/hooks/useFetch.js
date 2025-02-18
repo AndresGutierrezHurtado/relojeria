@@ -24,7 +24,7 @@ export const useGetData = (endpoint) => {
     useEffect(() => {
         const getData = async () => {
             const response = await useFetchData(endpoint);
-            setData(response.data);
+            setData(response);
             setLoading(false);
         };
 
@@ -33,5 +33,5 @@ export const useGetData = (endpoint) => {
 
     const reload = () => setLoading(true);
 
-    return { data, loading, reload };
+    return { data: data?.data, pages: data?.pages, loading, reload };
 };

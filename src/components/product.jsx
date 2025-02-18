@@ -67,7 +67,7 @@ export default function ProductCard({ product }) {
                         </div>
                     </div>
                 </div>
-                <form method="dialog" class="modal-backdrop">
+                <form method="dialog" className="modal-backdrop">
                     <button>close</button>
                 </form>
             </dialog>
