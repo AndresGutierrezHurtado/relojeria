@@ -8,7 +8,7 @@ export default function ProductList({ products }) {
             <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10">
                 {products.map((product) => (
                     <Tilt
-                        key={product.product_image}
+                        key={product.product.id}
                         className="p-7 bg-stone-100/[.05] rounded-lg bg-blur-xl text-white flex flex-col gap-5 overflow-hidden"
                         glareEnable={true}
                         glareMaxOpacity={0.3}
@@ -24,7 +24,7 @@ export default function ProductList({ products }) {
                             <h2 className="text-2xl font-bold leading-[1.1] text-center">
                                 {product.product_name}
                             </h2>
-                            <p class="bg-gradient-to-t from-yellow-500 from-30% via-yellow-300 via-50% to-yellow-500 to-55% bg-clip-text text-transparent text-3xl font-extrabold text-center">
+                            <p className="bg-gradient-to-t from-yellow-500 from-30% via-yellow-300 via-50% to-yellow-500 to-55% bg-clip-text text-transparent text-3xl font-extrabold text-center">
                             {parseInt(product.product_price).toLocaleString("es-CO")} COP
                             </p>
                         </div>

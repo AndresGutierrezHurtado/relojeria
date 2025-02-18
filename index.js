@@ -14,7 +14,7 @@ app.get("/watches", async (req, res) => {
 
         const watches = [];
         $("gp-product").each((index, element) => {
-            const productImage = $(element).find("gp-product-images-v2 img").attr("src");
+            const productImage = $(element).find("gp-product-images-v2 img").attr("data-src");
             const productName = $(element).find("gp-text h2").text().trim();
             const productPrice = $(element)
                 .find("gp-product div:nth-of-type(2) div:nth-child(2) gp-text")
