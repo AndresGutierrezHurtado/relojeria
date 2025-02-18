@@ -17,13 +17,13 @@ function App() {
             </div>
             <div className="w-full px-3 max-w-[1200px] mx-auto flex flex-col gap-10">
                 <div className="w-fit mx-auto  py-10 flex flex-col gap-5">
-                    <div className="flex flex-col items-center mx-5">
+                    <div className="flex flex-col items-center mx-10">
                         <img
-                            src="https://www.businesscolombia.shop/cdn/shop/files/LOGO-BUSINESS.png?v=1734187758&width=70"
+                            src="/logo.png"
                             alt="Logo"
-                            className="size-[100px] object-contain"
+                            className="size-[150px] object-contain"
                         />
-                        <h1 className="text-white text-4xl font-bold">Business Colombia</h1>
+                        <h1 className="text-white text-4xl font-bold">Tempus Elite</h1>
                     </div>
                     <ul className="flex gap-8 justify-center border-t-2 border-yellow-400 pt-4 text-xl">
                         <li
