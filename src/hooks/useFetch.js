@@ -1,43 +1,37 @@
 import React, { useState, useEffect } from "react";
 
-// Mock
-import { products } from "../mocks/products.json";
+const API_URL = import.meta.env.VITE_API_DOMAIN;
 
-export const queryApi = async () => {
-    try {
-        return {
-            success: true,
-            message: "Acción exitosa",
-            data: products.map((p) => ({
-                product_image: p.product_image,
-                product_name: p.product_name,
-                product_price: parseInt(p.product_discount.replace("$", "").replace(".", "")),
-            })),
-        };
-    } catch (error) {
-        console.error("Error al realizar la petición: ", error);
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Hubo un error en la petición: " + error.message,
-        });
-        return undefined;
-    }
+export const useFetchData = async (endpoint, options) => {
+    const request = await fetch(`${API_URL}${endpoint}`, {
+        headers: {
+            "content-type": "application/json",
+            accept: "application/json",
+        },
+        method: "GET",
+        ...options,
+    }).catch((error) => {
+        console.error(error);
+    });
+
+    return request.json();
 };
 
-export const useGetWatches = (endpoint) => {
+export const useGetData = (endpoint) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await queryApi();
-            if (result) setData(result.data);
+        const getData = async () => {
+            const response = await useFetchData(endpoint);
+            setData(response.data);
             setLoading(false);
         };
-        fetchData();
+
+        getData();
     }, [endpoint]);
 
-    return { data, loading };
-};
+    const reload = () => setLoading(true);
 
+    return { data, loading, reload };
+};
