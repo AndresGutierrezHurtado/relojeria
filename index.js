@@ -72,7 +72,6 @@ app.get("/collections", async (req, res) => {
                 .trim();
             const collectionLink = $(element).attr("href");
             const collecitonImage = $(element).find("img").attr("data-src");
-            console.log(collectionName, collectionLink, collecitonImage);
 
             if (collectionName && collectionLink && collecitonImage) {
                 collections.push({
