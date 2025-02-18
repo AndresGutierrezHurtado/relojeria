@@ -23,7 +23,8 @@ app.get("/watches", async (req, res) => {
             const productDiscount = $(element).find("gp-product gp-product-price").text().trim();
             const product = $(element).find("gp-product-images-v2").attr("gp-data");
             const productJSON = JSON.parse(product).product;
-            if (productImage && productName && productPrice) {
+
+            if (productImage && productName && productPrice && productDiscount && productJSON) {
                 watches.push({
                     product_image: productImage,
                     product_name: productName,
