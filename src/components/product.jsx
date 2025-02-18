@@ -15,8 +15,8 @@ export default function ProductCard({ product }) {
                 alt={product.product_name}
                 className="w-full rounded-lg"
             />
-            <div className="flex flex-col gap-2">
-                <h2 className="text-2xl font-bold leading-[1.1] text-center">
+            <div className="flex flex-col gap-2 flex-grow">
+                <h2 className="text-2xl font-bold leading-[1.1] text-center flex-grow">
                     {product.product_name}
                 </h2>
                 <p className="bg-gradient-to-t from-yellow-500 from-30% via-yellow-300 via-50% to-yellow-500 to-55% bg-clip-text text-transparent text-3xl font-extrabold text-center">
