@@ -25,9 +25,9 @@ function App() {
                         />
                         <h1 className="text-white text-4xl font-bold">Business Colombia</h1>
                     </div>
-                    <ul className="flex gap-8 justify-center border-t border-yellow-400 pt-4 text-lg">
+                    <ul className="flex gap-8 justify-center border-t-2 border-yellow-400 pt-4 text-xl">
                         <li
-                            className={`hover:text-yellow-400 hover:scale-[1.2] duration-300 cursor-pointer ${
+                            className={`hover:text-yellow-400 hover:scale-[1.1] duration-300 cursor-pointer ${
                                 type === "home" ? "text-yellow-300" : ""
                             }`}
                             onClick={() => setType("home")}
@@ -35,7 +35,7 @@ function App() {
                             Inicio
                         </li>
                         <li
-                            className={`hover:text-yellow-400 hover:scale-[1.2] duration-300 cursor-pointer ${
+                            className={`hover:text-yellow-400 hover:scale-[1.1] duration-300 cursor-pointer ${
                                 type === "all" ? "text-yellow-300" : ""
                             }`}
                             onClick={() => setType("all")}
