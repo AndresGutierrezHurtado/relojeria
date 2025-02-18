@@ -8,7 +8,11 @@ app.use(cors());
 
 app.get("/watches", async (req, res) => {
     try {
-        const response = await fetch("https://www.businesscolombia.shop/collections/rolexx");
+        const response = await fetch(
+            `https://www.businesscolombia.shop/collections/${
+                req.query.collection || "lo-mas-vendido"
+            }`
+        );
         const body = await response.text();
         const $ = cheerio.load(body);
 
@@ -45,6 +49,39 @@ app.get("/watches", async (req, res) => {
             success: true,
             message: "Acción exitosa",
             data: watches,
+        });
+    } catch (error) {
+        console.error("Error fetching watches:", error);
+        res.status(500).json({ error: "Failed to fetch watches" });
+    }
+});
+
+app.get("/collections", async (req, res) => {
+    try {
+        const response = await fetch(`https://www.businesscolombia.shop/collections`);
+        const body = await response.text();
+        const $ = cheerio.load(body);
+
+        const collections = [];
+        $('a[href^="https://www.businesscolombia.shop/collections"]').each((index, element) => {
+            const collectionName = $(element).closest('div[type="component"]').find("gp-text h3").text().trim();
+            const collectionLink = $(element).attr("href");
+            const collecitonImage = $(element).find("img").attr("data-src");
+            console.log(collectionName, collectionLink, collecitonImage);
+
+            if (collectionName && collectionLink && collecitonImage) {
+                collections.push({
+                    collection_name: collectionName,
+                    collection_slug: collectionLink.replace("https://www.businesscolombia.shop/collections", ""),
+                    collection_image: collecitonImage,
+                });
+            }
+        });
+
+        res.status(200).json({
+            success: true,
+            message: "Acción exitosa",
+            data: collections,
         });
     } catch (error) {
         console.error("Error fetching watches:", error);
