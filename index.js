@@ -33,10 +33,10 @@ app.get("/watches", async (req, res) => {
                     product_image: productImage,
                     product_name: productName,
                     product_price: parseInt(
-                        productPrice.replace("$", "").replace(",00", "").replace(".", "")
+                        productPrice.replace("$", "").replace(",00", "").replaceAll(".", "")
                     ),
                     product_discount: parseInt(
-                        productDiscount.replace("$", "").replace(",00", "").replace(".", "")
+                        productDiscount.replace("$", "").replace(",00", "").replaceAll(".", "")
                     ),
                     product_description: productJSON.description,
                     product_availability: productJSON.available,
