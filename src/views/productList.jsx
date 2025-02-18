@@ -4,9 +4,11 @@ import React from "react";
 import ProductCard from "../components/product";
 import Loading from "../components/loading";
 import { useGetData } from "../hooks/useFetch";
+import { useParams, useSearchParams } from "react-router-dom";
 
 export default function ProductList() {
-    const { data: products, loading: loadingProducts } = useGetData("/watches");
+    const { collection } = useParams();
+    const { data: products, loading: loadingProducts } = useGetData(`/watches?collection=${collection}`);
 
     if (loadingProducts) return <Loading />;
     return (

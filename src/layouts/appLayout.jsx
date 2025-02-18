@@ -18,7 +18,10 @@ export default function AppLayout() {
                             <Link to="/">Inicio</Link>
                         </li>
                         <li className="hover:text-yellow-400 hover:scale-[1.1] duration-300 cursor-pointer">
-                            <Link to="/list">Inicio</Link>
+                            <Link to="/collections">Marcas</Link>
+                        </li>
+                        <li className="hover:text-yellow-400 hover:scale-[1.1] duration-300 cursor-pointer">
+                            <Link to="/collections/lo-mas-vendido">Lo Más Vendido</Link>
                         </li>
                     </ul>
                 </div>

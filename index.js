@@ -89,7 +89,7 @@ app.get("/collections", async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Acción exitosa",
-            data: collections,
+            data: collections.filter((c) => c.collection_name !== "COMBOS"),
         });
     } catch (error) {
         console.error("Error fetching watches:", error);
