@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Tilt } from "react-tilt";
 
 // Hooks
 import { useGetWatches } from "./hooks/useFetch";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export default function ProductList({ products }) {
     return (
@@ -9,15 +9,11 @@ export default function ProductList({ products }) {
                 {products.map((product) => (
                     <Tilt
                         key={product.product_image}
-                        className="p-7 bg-zinc-300/20 rounded-lg bg-blur-xl text-white flex flex-col gap-5"
-                        options={{
-                            max: 15,
-                            scale: 1,
-                            speed: 1,
-                            transition: true,
-                            reset: true,
-                            easing: "cubic-bezier(.03,.98,.52,.99)",
-                        }}
+                        className="p-7 bg-zinc-300/20 rounded-lg bg-blur-xl text-white flex flex-col gap-5 overflow-hidden"
+                        glareEnable={true}
+                        glareMaxOpacity={0.3}
+                        tiltMaxAngleX={10}
+                        tiltMaxAngleY={15}
                     >
                         <img
                             src={product.product_image}
