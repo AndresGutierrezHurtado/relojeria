@@ -52,7 +52,8 @@ app.get("/watches", async (req, res) => {
         });
     } catch (error) {
         console.error("Error fetching watches:", error);
-        res.status(500).json({ error: "Failed to fetch watches" });
+
+        res.status(500).json({ success: false, message: "Error fetching watches", data: error });
     }
 });
 
@@ -64,7 +65,11 @@ app.get("/collections", async (req, res) => {
 
         const collections = [];
         $('a[href^="https://www.businesscolombia.shop/collections"]').each((index, element) => {
-            const collectionName = $(element).closest('div[type="component"]').find("gp-text h3").text().trim();
+            const collectionName = $(element)
+                .closest('div[type="component"]')
+                .find("gp-text h3")
+                .text()
+                .trim();
             const collectionLink = $(element).attr("href");
             const collecitonImage = $(element).find("img").attr("data-src");
             console.log(collectionName, collectionLink, collecitonImage);
@@ -72,7 +77,10 @@ app.get("/collections", async (req, res) => {
             if (collectionName && collectionLink && collecitonImage) {
                 collections.push({
                     collection_name: collectionName,
-                    collection_slug: collectionLink.replace("https://www.businesscolombia.shop/collections", ""),
+                    collection_slug: collectionLink.replace(
+                        "https://www.businesscolombia.shop/collections",
+                        ""
+                    ),
                     collection_image: collecitonImage,
                 });
             }
@@ -85,7 +93,8 @@ app.get("/collections", async (req, res) => {
         });
     } catch (error) {
         console.error("Error fetching watches:", error);
-        res.status(500).json({ error: "Failed to fetch watches" });
+
+        res.status(500).json({ success: false, message: "Error fetching watches", data: error });
     }
 });
 
