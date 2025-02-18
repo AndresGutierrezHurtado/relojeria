@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+
+// Hooks
+import { useGetData } from "../hooks/useFetch.js";
 
 // Components
-import ProductCard from "../components/product";
-import Loading from "../components/loading";
-import { useGetData } from "../hooks/useFetch";
-import { useParams, useSearchParams } from "react-router-dom";
-import Pagination from "../components/pagination";
+import ProductCard from "../components/product.jsx";
+import Loading from "../components/loading.jsx";
+import Pagination from "../components/pagination.jsx";
 
 export default function ProductList() {
     const { collection } = useParams();

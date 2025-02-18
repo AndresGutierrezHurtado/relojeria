@@ -1,7 +1,11 @@
 import React from "react";
-import Loading from "../components/loading";
-import { useGetData } from "../hooks/useFetch";
 import Tilt from "react-parallax-tilt";
+
+// Hooks
+import { useGetData } from "../hooks/useFetch";
+
+// Components
+import Loading from "../components/loading";
 
 export default function Brands() {
     const { data: collections, loading: loadingCollections } = useGetData("/collections");

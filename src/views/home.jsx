@@ -6,11 +6,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // Hooks
-import { useGetData } from "../hooks/useFetch";
+import { useGetData } from "../hooks/useFetch.js";
 
 // Components
-import Loading from "../components/loading";
-import ProductCard from "../components/product";
+import Loading from "../components/loading.jsx";
+import ProductCard from "../components/product.jsx";
 
 export default function Home() {
     const { data: combos, loading: combosLoading } = useGetData("/watches?collection=combos");
