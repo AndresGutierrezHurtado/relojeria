@@ -1,8 +1,19 @@
-# React + Vite
+# Relojeria Tempus Elite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido a la relojeria Tempus Elite, en donde puedes encontrar una gran variedad de relojes de lujo de las mejores marcas del mundo.
 
-Currently, two official plugins are available:
+## Marca
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nosotros somos una tienda de relojes de lujo especializada en marcas como Rolex, Omega, Patek Philippe, Cartier, etc.
+
+## Caracteristicas
+
+-   Tienda online
+-   Garantia de 3 meses por defectos de fabrica
+-   Atencion al cliente personalizada
+-   Precio competitivo
+
+## Contacto
+
+-   Email: [andres52885241@gmail.com](mailto:andres52885241@gmail.com)
+-   Telefono: +57 320 9202177

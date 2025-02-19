@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const API_URL = import.meta.env.VITE_API_DOMAIN;
-
 export const useFetchData = async (endpoint, options) => {
-    const request = await fetch(`${API_URL}${endpoint}`, {
+    const request = await fetch(endpoint, {
         headers: {
             "content-type": "application/json",
             accept: "application/json",
@@ -24,7 +22,7 @@ export const useGetData = (endpoint) => {
     useEffect(() => {
         const getData = async () => {
             const response = await useFetchData(endpoint);
-            setData(response);
+            setData(response.data);
             setLoading(false);
         };
 
@@ -33,5 +31,5 @@ export const useGetData = (endpoint) => {
 
     const reload = () => setLoading(true);
 
-    return { data: data?.data, pages: data?.pages, loading, reload };
+    return { data: data?.watches, pages: data?.pages, loading, reload };
 };
