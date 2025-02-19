@@ -1,14 +1,20 @@
-
-import Swiper from "@/components/swiper";
 import Image from "next/image";
 import Link from "next/link";
+
+// Components
+import CombosSwiper from "@/components/combosSwiper";
+
+// Hooks
+import { useGetData } from "@/hooks/useFetch";
 
 export const metadata = {
     title: "Inicio | Tempus Elite",
     description: "Tempus Elite - Tienda de relojes de lujo",
 };
 
-export default function Home() {
+export default async function Home() {
+    const { watches: combos, pages } = await useGetData("/api/watches?collection=combos");
+
     return (
         <main className="flex flex-col gap-10 py-10">
             <section className="w-full px-3">
@@ -97,7 +103,7 @@ export default function Home() {
             <section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
                     <h1 className="font-medium text-4xl">Combos🤑:</h1>
-                    <Swiper combos={[]} />
+                    <CombosSwiper combos={combos} />
                 </div>
             </section>
         </main>
