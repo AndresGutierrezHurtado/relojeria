@@ -56,11 +56,11 @@ export default function ProductCard({ product }) {
                                         )
                                         .replace("📊 Proyección de rentabilidad:", "")
                                         .replace(
-                                            "<strong>Precio sugerido de venta por unidad</strong>: 100%</li>",
+                                            /<li>\s*<strong>\s*Precio sugerido de venta por unidad.*?<\/strong>.*?<\/li>/gs,
                                             ""
                                         )
                                         .replace(
-                                            /<strong>Rentabilidad promedio total<\/strong>: <strong>\$ [\d,.]+ 🤑🚀<\/strong><br><br><br>/,
+                                            /<li>\s*<strong>\s*Rentabilidad promedio total.*?<\/strong>.*?<\/li>/gs,
                                             ""
                                         ),
                                 }}
