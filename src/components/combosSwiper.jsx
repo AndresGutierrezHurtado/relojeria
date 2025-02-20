@@ -13,7 +13,15 @@ export default function CombosSwiper({ combos }) {
     return (
         <Swiper
             spaceBetween={50}
-            slidesPerView={3}
+            slidesPerView={1}
+            breakpoints={{
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            }}
             pagination={true}
             modules={[Pagination]}
             className="w-full h-full"

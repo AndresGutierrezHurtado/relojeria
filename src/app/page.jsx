@@ -22,7 +22,7 @@ export default async function Home() {
                     <div className="w-full md:w-2/5 flex flex-col gap-5">
                         <div className="w-full pb-5">
                             <p className="text-yellow-500 font-medium text-lg">Nuestros combos</p>
-                            <h1 className="text-8xl font-bold text-pretty leading-[0.87]">
+                            <h1 className="text-6xl sm:text-8xl font-bold text-pretty leading-[0.87]">
                                 ¡El <span className="text-yellow-500">combo perfecto</span> para ti
                                 está aquí!
                             </h1>
