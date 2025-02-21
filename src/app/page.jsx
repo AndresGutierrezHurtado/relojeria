@@ -50,7 +50,8 @@ export default async function Home() {
                                 src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-136e5a94-17fe-4a69-a9e8-eb98f44edfae.jpg?v=11092526891830783607"
                                 alt="Imagen de Rolex"
                                 width={150}
-                                height={150} />
+                                height={150}
+                            />
                             <h2 className="text-xl text-center font-medium">Rolexx</h2>
                         </Link>
                         <Link
@@ -61,7 +62,8 @@ export default async function Home() {
                                 src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-b319a795-1746-4448-802f-4eefe80c809d.jpg?v=11757830867926194137"
                                 alt="Imagen de Richard Mille"
                                 width={150}
-                                height={150} />
+                                height={150}
+                            />
                             <h2 className="text-xl text-center font-medium">Richard Mille</h2>
                         </Link>
                         <Link href="/collections/qyq" className="flex flex-col items-center gap-1">
@@ -69,7 +71,8 @@ export default async function Home() {
                                 src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-8541325a-7526-4673-b4c9-5d33bda9af66.jpg?v=18415660710441147037"
                                 alt="Imagen de Richard Mille"
                                 width={150}
-                                height={150} />
+                                height={150}
+                            />
                             <h2 className="text-xl text-center font-medium">Q&Q</h2>
                         </Link>
                         <Link
@@ -80,12 +83,14 @@ export default async function Home() {
                                 src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-3a60d8c2-0fc0-4fd3-a23e-68dc1d371fcf.jpg?v=16735776692617055759"
                                 alt="Imagen de Richard Mille"
                                 width={150}
-                                height={150} />
+                                height={150}
+                            />
                             <h2 className="text-xl text-center font-medium">Casio</h2>
                         </Link>
                     </div>
                 </div>
-            </section><section className="w-full px-3">
+            </section>
+            <section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-row items-center gap-10">
                     <div className="w-full md:w-2/5 flex flex-col gap-5">
                         <div className="w-full pb-5">
@@ -111,10 +116,12 @@ export default async function Home() {
                             alt="Imagen combo"
                             className="object-contain w-full"
                             width={400}
-                            height={400} />
+                            height={400}
+                        />
                     </div>
                 </div>
-            </section><section className="w-full px-3">
+            </section>
+            <section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
                     <h1 className="font-medium text-4xl">Combos🤑:</h1>
                     <CombosSwiper combos={combos} />
