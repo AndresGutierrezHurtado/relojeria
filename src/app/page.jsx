@@ -18,36 +18,16 @@ export default async function Home() {
     return (
         <main className="flex flex-col gap-10 py-10">
             <section className="w-full px-3">
-                <div className="w-full max-w-[1200px] mx-auto flex flex-row items-center gap-10">
-                    <div className="w-full md:w-2/5 flex flex-col gap-5">
-                        <div className="w-full pb-5">
-                            <p className="text-yellow-500 font-medium text-lg">Nuestros combos</p>
-                            <h1 className="text-6xl sm:text-8xl font-bold text-pretty leading-[0.87]">
-                                ¡El <span className="text-yellow-500">combo perfecto</span> para ti
-                                está aquí!
-                            </h1>
-                        </div>
-                        <p className="text-lg text-gray-300 leading-tight">
-                            Porque sabemos que el estilo importa, hemos creado combinaciones únicas
-                            de relojes para que lleves lo mejor, siempre.
-                        </p>
-                        <Link href="/collections/combos">
-                            <button className="btn text-xl bg-yellow-500 text-black font-bold py-1 h-auto rounded-lg">
-                                Ver Combos
-                            </button>
-                        </Link>
-                    </div>
-                    <div className="w-3/5 hidden md:block">
-                        <Image
-                            src="/hero.png"
-                            alt="Imagen combo"
-                            className="object-contain w-full"
-                            width={400}
-                            height={400}
-                        />
-                    </div>
-                </div>
+                <Image
+                    src="/shelf_clock.png"
+                    alt="Imagen de reloj de lujo"
+                    width={1500}
+                    height={1500}
+                    className="object-contain"
+
+                />
             </section>
+
             <section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
                     <h1 className="font-medium text-4xl">Principales categorias:</h1>
@@ -97,6 +77,37 @@ export default async function Home() {
                             />
                             <h2 className="text-xl text-center font-medium">Casio</h2>
                         </Link>
+                    </div>
+                </div>
+            </section>
+            <section className="w-full px-3">
+                <div className="w-full max-w-[1200px] mx-auto flex flex-row items-center gap-10">
+                    <div className="w-full md:w-2/5 flex flex-col gap-5">
+                        <div className="w-full pb-5">
+                            <p className="text-yellow-500 font-medium text-lg">Nuestros combos</p>
+                            <h1 className="text-6xl sm:text-8xl font-bold text-pretty leading-[0.87]">
+                                ¡El <span className="text-yellow-500">combo perfecto</span> para ti
+                                está aquí!
+                            </h1>
+                        </div>
+                        <p className="text-lg text-gray-300 leading-tight">
+                            Porque sabemos que el estilo importa, hemos creado combinaciones únicas
+                            de relojes para que lleves lo mejor, siempre.
+                        </p>
+                        <Link href="/collections/combos">
+                            <button className="btn text-xl bg-yellow-500 text-black font-bold py-1 h-auto rounded-lg">
+                                Ver Combos
+                            </button>
+                        </Link>
+                    </div>
+                    <div className="w-3/5 hidden md:block">
+                        <Image
+                            src="/hero.png"
+                            alt="Imagen combo"
+                            className="object-contain w-full"
+                            width={400}
+                            height={400}
+                        />
                     </div>
                 </div>
             </section>
