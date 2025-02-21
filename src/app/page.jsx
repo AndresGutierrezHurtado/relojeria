@@ -17,7 +17,75 @@ export default async function Home() {
 
     return (
         <main className="flex flex-col gap-10 py-10">
-            <section className="w-full px-3">
+                  <section className="w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="w-full md:w-1/2">
+          <Image
+            src="/shelf_clock.png"
+            alt="Imagen de reloj de lujo"
+            width={300}
+            height={300}
+            className="object-contain w-auto h-auto"
+          />
+        </div>
+
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <h1 className="text-6xl font-bold mb-6">Tempus Elite</h1>
+          <p className="text-xl text-yellow-500 mb-8">Elegancia en cada segundo, accesible para todos</p>
+          <p className="text-lg text-gray-600 mb-8">
+          Creemos que la elegancia y la precisión no tienen por qué costar una fortuna.
+           Ofrecemos una amplia selección de relojes de las marcas más prestigiosas del mundo, a precios que se adaptan a tu bolsillo. 
+          </p>
+          <div className="text-4xl font-bold text-yellow-500">CONTACTANOS!</div>
+        </div>
+      </section>
+        <section className="w-full px-3">
+                <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
+                    <h1 className="font-medium text-4xl">Principales categorias:</h1>
+                    <div className="grid text-xl grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-10 [&_img]:rounded-lg [&_img]:size-[150px]">
+                        <Link
+                            href="/collections/rolexx"
+                            className="flex flex-col items-center gap-1"
+                        >
+                            <Image
+                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-136e5a94-17fe-4a69-a9e8-eb98f44edfae.jpg?v=11092526891830783607"
+                                alt="Imagen de Rolex"
+                                width={150}
+                                height={150} />
+                            <h2 className="text-xl text-center font-medium">Rolexx</h2>
+                        </Link>
+                        <Link
+                            href="/collections/richard-mille"
+                            className="flex flex-col items-center gap-1"
+                        >
+                            <Image
+                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-b319a795-1746-4448-802f-4eefe80c809d.jpg?v=11757830867926194137"
+                                alt="Imagen de Richard Mille"
+                                width={150}
+                                height={150} />
+                            <h2 className="text-xl text-center font-medium">Richard Mille</h2>
+                        </Link>
+                        <Link href="/collections/qyq" className="flex flex-col items-center gap-1">
+                            <Image
+                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-8541325a-7526-4673-b4c9-5d33bda9af66.jpg?v=18415660710441147037"
+                                alt="Imagen de Richard Mille"
+                                width={150}
+                                height={150} />
+                            <h2 className="text-xl text-center font-medium">Q&Q</h2>
+                        </Link>
+                        <Link
+                            href="/collections/casio"
+                            className="flex flex-col items-center gap-1"
+                        >
+                            <Image
+                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-3a60d8c2-0fc0-4fd3-a23e-68dc1d371fcf.jpg?v=16735776692617055759"
+                                alt="Imagen de Richard Mille"
+                                width={150}
+                                height={150} />
+                            <h2 className="text-xl text-center font-medium">Casio</h2>
+                        </Link>
+                    </div>
+                </div>
+            </section><section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-row items-center gap-10">
                     <div className="w-full md:w-2/5 flex flex-col gap-5">
                         <div className="w-full pb-5">
@@ -43,64 +111,10 @@ export default async function Home() {
                             alt="Imagen combo"
                             className="object-contain w-full"
                             width={400}
-                            height={400}
-                        />
+                            height={400} />
                     </div>
                 </div>
-            </section>
-            <section className="w-full px-3">
-                <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
-                    <h1 className="font-medium text-4xl">Principales categorias:</h1>
-                    <div className="grid text-xl grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-10 [&_img]:rounded-lg [&_img]:size-[150px]">
-                        <Link
-                            href="/collections/rolexx"
-                            className="flex flex-col items-center gap-1"
-                        >
-                            <Image
-                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-136e5a94-17fe-4a69-a9e8-eb98f44edfae.jpg?v=11092526891830783607"
-                                alt="Imagen de Rolex"
-                                width={150}
-                                height={150}
-                            />
-                            <h2 className="text-xl text-center font-medium">Rolexx</h2>
-                        </Link>
-                        <Link
-                            href="/collections/richard-mille"
-                            className="flex flex-col items-center gap-1"
-                        >
-                            <Image
-                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-b319a795-1746-4448-802f-4eefe80c809d.jpg?v=11757830867926194137"
-                                alt="Imagen de Richard Mille"
-                                width={150}
-                                height={150}
-                            />
-                            <h2 className="text-xl text-center font-medium">Richard Mille</h2>
-                        </Link>
-                        <Link href="/collections/qyq" className="flex flex-col items-center gap-1">
-                            <Image
-                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-8541325a-7526-4673-b4c9-5d33bda9af66.jpg?v=18415660710441147037"
-                                alt="Imagen de Richard Mille"
-                                width={150}
-                                height={150}
-                            />
-                            <h2 className="text-xl text-center font-medium">Q&Q</h2>
-                        </Link>
-                        <Link
-                            href="/collections/casio"
-                            className="flex flex-col items-center gap-1"
-                        >
-                            <Image
-                                src="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-3a60d8c2-0fc0-4fd3-a23e-68dc1d371fcf.jpg?v=16735776692617055759"
-                                alt="Imagen de Richard Mille"
-                                width={150}
-                                height={150}
-                            />
-                            <h2 className="text-xl text-center font-medium">Casio</h2>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-            <section className="w-full px-3">
+            </section><section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
                     <h1 className="font-medium text-4xl">Combos🤑:</h1>
                     <CombosSwiper combos={combos} />
