@@ -1,8 +1,9 @@
 "use client";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import * as THREE from "three";
+
 const Model = () => {
     const { scene } = useGLTF("/scene.glb");
 
@@ -29,7 +30,25 @@ const Model = () => {
     minutePointer.rotation.z = -(minutes / 60) * 2 * Math.PI;
     hourPointer.rotation.z = -(hours / 12 + minutes / 720) * 2 * Math.PI;
 
-    return <primitive object={scene} scale={1.1} />;
+    const box = new THREE.Box3().setFromObject(scene);
+    const center = new THREE.Vector3();
+    box.getCenter(center);
+    scene.position.sub(center);
+
+    return <primitive object={scene} scale={1} />;
+};
+
+const CameraRig = () => {
+    useFrame(({ clock, camera }) => {
+        const t = clock.getElapsedTime();
+        const radius = 1;
+        const speed = 0.5;
+
+        camera.position.y = radius * Math.sin(t * speed);
+        camera.position.z = (radius * 1.5) * Math.cos(t * speed);
+    });
+
+    return null;
 };
 
 const ModelViewer = () => {
@@ -42,7 +61,7 @@ const ModelViewer = () => {
             }
         >
             <Canvas
-                camera={{ position: [-10, 0, 0], fov: 50 }}
+                camera={{ position: [-13, 0, 0], fov: 50 }}
                 gl={{ antialias: true, powerPreference: "high-performance" }}
                 dpr={[1, 2]}
             >
@@ -51,7 +70,8 @@ const ModelViewer = () => {
                 <directionalLight position={[-10, 10, 5]} intensity={0.5} />
                 <directionalLight position={[0, 10, 0]} intensity={0.5} />
                 <Model />
-                <OrbitControls />
+                <CameraRig />
+                <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
             </Canvas>
         </Suspense>
     );

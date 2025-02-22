@@ -17,22 +17,26 @@ export default async function Home() {
     const { watches: combos, pages } = await useGetData("/api/watches?collection=combos");
 
     return (
-        <main className="flex flex-col gap-10 py-10">
+        <main className="flex flex-col gap-10 pb-10">
             <section className="w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-10">
-                <div className="w-full md:w-1/2 h-[500px]">
+                <div className="w-full max-w-[400px] h-[500px]">
                     <ModelViewer />
                 </div>
-                <div className="w-full md:w-1/2 text-center md:text-left">
-                    <h1 className="text-6xl font-bold mb-6">Tempus Elite</h1>
-                    <p className="text-xl text-yellow-500 mb-8">
-                        Elegancia en cada segundo, accesible para todos
-                    </p>
-                    <p className="text-lg text-gray-600 mb-8">
-                        Creemos que la elegancia y la precisión no tienen por qué costar una
-                        fortuna. Ofrecemos una amplia selección de relojes de las marcas más
-                        prestigiosas del mundo, a precios que se adaptan a tu bolsillo.
-                    </p>
-                    <div className="text-4xl font-bold text-yellow-500">CONTACTANOS!</div>
+                <div className="w-full text-center md:text-left flex flex-col gap-7">
+                    <div className="flex flex-col gap-1">
+                        <h1 className="text-6xl font-bold">Tempus Elite</h1>
+                        <p className="text-xl text-yellow-500">
+                            Elegancia en cada segundo, accesible para todos
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                        <p className="text-lg text-gray-300/90">
+                            Creemos que la elegancia y la precisión no tienen por qué costar una
+                            fortuna. Ofrecemos una amplia selección de relojes de las marcas más
+                            prestigiosas del mundo, a precios que se adaptan a tu bolsillo.
+                        </p>
+                        <Link href="https://wa.link/i0yu7k" target="_blank" className="text-4xl font-bold text-yellow-500 cursor-pointer hover:underline underline-offset-4 w-fit">CONTACTANOS!</Link>
+                    </div>
                 </div>
             </section>
             <section className="w-full px-3">
