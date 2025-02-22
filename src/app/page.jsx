@@ -16,6 +16,7 @@ export const metadata = {
 export default async function Home() {
     const { watches: combos, pages } = await useGetData("/api/watches?collection=combos");
 
+    if (!combos) return { notFound: true };
     return (
         <main className="flex flex-col gap-10 pb-10">
             <section className="w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-10">

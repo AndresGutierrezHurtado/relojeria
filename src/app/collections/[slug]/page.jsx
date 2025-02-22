@@ -12,6 +12,7 @@ export default async function Page({ params }) {
         `/api/watches?collection=${slug}`
     );
 
+    if (!watches) return { notFound: true };
     return (
         <div className="flex flex-col gap-5 pb-10">
             <h2 className="text-4xl font-bold text-white">Productos:</h2>
