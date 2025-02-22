@@ -19,7 +19,7 @@ export default async function Home() {
     return (
         <main className="flex flex-col gap-10 pb-10">
             <section className="w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-10">
-                <div className="w-full max-w-[400px] h-[500px]">
+                <div className="hidden md:block w-full max-w-[400px] h-[500px]">
                     <ModelViewer />
                 </div>
                 <div className="w-full text-center md:text-left flex flex-col gap-7">
@@ -35,7 +35,7 @@ export default async function Home() {
                             fortuna. Ofrecemos una amplia selección de relojes de las marcas más
                             prestigiosas del mundo, a precios que se adaptan a tu bolsillo.
                         </p>
-                        <Link href="https://wa.link/i0yu7k" target="_blank" className="text-4xl font-bold text-yellow-500 cursor-pointer hover:underline underline-offset-4 w-fit">CONTACTANOS!</Link>
+                        <Link href="https://wa.link/i0yu7k" target="_blank" className="text-4xl font-bold text-yellow-500 cursor-pointer hover:underline underline-offset-4 w-fit mx-auto md:mx-0">CONTACTANOS!</Link>
                     </div>
                 </div>
             </section>
@@ -96,7 +96,7 @@ export default async function Home() {
                     <div className="w-full md:w-2/5 flex flex-col gap-5">
                         <div className="w-full pb-5">
                             <p className="text-yellow-500 font-medium text-lg">Nuestros combos</p>
-                            <h1 className="text-6xl sm:text-8xl font-bold text-pretty leading-[0.87]">
+                            <h1 className="text-6xl sm:text-8xl font-bold text-pretty leading-[0.84_!important]">
                                 ¡El <span className="text-yellow-500">combo perfecto</span> para ti
                                 está aquí!
                             </h1>

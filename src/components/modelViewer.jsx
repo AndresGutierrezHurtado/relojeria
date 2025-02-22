@@ -45,7 +45,7 @@ const CameraRig = () => {
         const speed = 0.5;
 
         camera.position.y = radius * Math.sin(t * speed);
-        camera.position.z = (radius * 1.5) * Math.cos(t * speed);
+        camera.position.z = radius * 1.5 * Math.cos(t * speed);
     });
 
     return null;
@@ -55,8 +55,11 @@ const ModelViewer = () => {
     return (
         <Suspense
             fallback={
-                <div className="w-full h-full flex flex-col gap-2 justify-center items-center">
-                    Loading...
+                <div className="w-full h-full flex flex-col gap-2 justify-center items-center grayscale-70 relative">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center text-center">
+                        <span className="loading loading-ring w-[110px]"></span>
+                        <h1 className="text-xl font-medium truncate">Cargando Modelo...</h1>
+                    </div>
                 </div>
             }
         >
