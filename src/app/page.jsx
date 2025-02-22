@@ -6,6 +6,7 @@ import CombosSwiper from "@/components/combosSwiper";
 
 // Hooks
 import { useGetData } from "@/hooks/useFetch";
+import ModelViewer from "@/components/modelViewer";
 
 export const metadata = {
     title: "Inicio | Tempus Elite",
@@ -18,16 +19,9 @@ export default async function Home() {
     return (
         <main className="flex flex-col gap-10 py-10">
             <section className="w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-10">
-                <div className="w-full md:w-1/2">
-                    <Image
-                        src="/shelf_clock.png"
-                        alt="Imagen de reloj de lujo"
-                        width={300}
-                        height={300}
-                        className="object-contain w-auto h-auto"
-                    />
+                <div className="w-full md:w-1/2 h-[500px]">
+                    <ModelViewer />
                 </div>
-
                 <div className="w-full md:w-1/2 text-center md:text-left">
                     <h1 className="text-6xl font-bold mb-6">Tempus Elite</h1>
                     <p className="text-xl text-yellow-500 mb-8">
