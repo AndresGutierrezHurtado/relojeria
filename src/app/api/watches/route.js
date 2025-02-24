@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import * as cheerio from "cheerio";
 
+const cache = new Map();
+
 export async function GET(request) {
     try {
         const { searchParams } = new URL(request.url);
@@ -9,6 +11,14 @@ export async function GET(request) {
         const baseUrl = `http://www.businesscolombia.shop/collections`;
         const watches = [];
         const collection = searchParams.get("collection") || "rolexx";
+
+        if (cache.has(collection)) {
+            return NextResponse.json({
+                success: true,
+                message: "Relojes obtenidos desde caché",
+                data: cache.get(collection),
+            });
+        }
 
         const getPages = async (url) => {
             const response = await fetch(url);
@@ -62,12 +72,15 @@ export async function GET(request) {
                 }
             });
         };
-
         const pages = await getPages(baseUrl + "/" + collection);
 
-        for (let i = 1; i <= pages; i++) {
-            await getWatches(baseUrl + "/" + collection + `?page=${i}`, i);
-        }
+        await Promise.all(
+            Array.from({ length: pages }).map((_, i) =>
+                getWatches(baseUrl + "/" + collection + `?page=${i + 1}`, i + 1)
+            )
+        );
+
+        cache.set(collection, { watches, pages });
 
         return NextResponse.json({
             success: true,
