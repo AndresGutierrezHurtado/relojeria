@@ -12,21 +12,32 @@ export default function ProductCard({ product }) {
                 tiltMaxAngleX={10}
                 tiltMaxAngleY={15}
             >
-                <img
-                    onClick={() =>
-                        document.getElementById(`modal-${product.product_name}`).showModal()
-                    }
-                    src={product.product_image}
-                    alt={product.product_name}
-                    className="w-full aspect-square object-contain rounded-lg bg-black/50 cursor-pointer hover:grayscale-50 duration-300"
-                    title="Información extra"
-                />
+                <figure className="relative w-full aspect-square rounded-lg overflow-hidden cursor-pointer duration-300 hover:grayscale-[40%]">
+                    <img
+                        onClick={() =>
+                            document.getElementById(`modal-${product.product_name}`).showModal()
+                        }
+                        src={product.product_image}
+                        alt={product.product_name}
+                        className={`w-full h-full object-contain bg-black/50 duration-300 ${
+                            !product.product_availability && "grayscale blur-[1.2px]"
+                        }`}
+                        title="Información extra"
+                    />
+                    {!product.product_availability && (
+                        <p className="text-5xl font-bold text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            Agotado
+                        </p>
+                    )}
+                </figure>
                 <div className="flex flex-col gap-2 flex-grow">
                     <h2 className="text-2xl font-bold leading-[1.1] text-center flex-grow">
                         {product.product_name}
                     </h2>
                     <p className="bg-gradient-to-t from-yellow-500 from-30% via-yellow-300 via-50% to-yellow-500 to-55% bg-clip-text text-transparent text-3xl font-extrabold text-center">
-                        {parseInt(product.product_price).toLocaleString("es-CO")} COP
+                        {!product.product_availability
+                            ? "Agotado"
+                            : product.product_price.toLocaleString("es-CO") + " COP"}
                     </p>
                 </div>
             </Tilt>
@@ -38,7 +49,7 @@ export default function ProductCard({ product }) {
                         </button>
                     </form>
                     <div className="flex flex-col md:flex-row gap-10">
-                        <div className="w-full md:w-1/2 pt-5 md:pt-0 rounded-lg bg-black/50 overflow-hidden">
+                        <div className="w-full md:w-1/2 pt-5 md:pt-0 rounded-lg bg-black/50 flex items-center overflow-hidden">
                             <img
                                 src={product.product_image}
                                 alt={`imagen del producto ${product.product_name}`}
@@ -47,6 +58,10 @@ export default function ProductCard({ product }) {
                         </div>
                         <div className="flex flex-col gap-2 flex-grow">
                             <p className="py-4 text-2xl font-medium">Información del producto:</p>
+
+                            <p className="bg-gradient-to-t from-yellow-500 from-30% via-yellow-300 via-50% to-yellow-500 to-55% bg-clip-text text-transparent text-4xl font-bold">
+                                {product.product_price.toLocaleString("es-CO") + " COP"}
+                            </p>
                             <div
                                 dangerouslySetInnerHTML={{
                                     __html: product.product_description

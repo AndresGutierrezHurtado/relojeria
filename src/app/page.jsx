@@ -92,7 +92,7 @@ export default async function Home() {
                     </div>
                 </div>
             </section>
-            <section className="w-full px-3">
+            <section className="w-full px-3 py-12">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-row items-center gap-10">
                     <div className="w-full md:w-2/5 flex flex-col gap-5">
                         <div className="w-full pb-5">
@@ -125,7 +125,7 @@ export default async function Home() {
             </section>
             <section className="w-full px-3">
                 <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-5">
-                    <h1 className="font-medium text-4xl">Combos🤑:</h1>
+                    <h1 className="font-medium text-4xl">Combos🔥:</h1>
                     <CombosSwiper combos={combos} />
                 </div>
             </section>
