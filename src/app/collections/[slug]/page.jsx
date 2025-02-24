@@ -5,12 +5,13 @@ import { useGetData } from "@/hooks/useFetch";
 
 // Components
 import ProductCard from "@/components/product";
+import Pagination from "@/components/pagination";
 
-export default async function Page({ params }) {
-    const { slug } = params;
-    const { watches, pages } = await useGetData(
-        `/api/watches?collection=${slug}`
-    );
+export default async function Page({ searchParams, params }) {
+    const { slug } = await params;
+    const { page = 1 } = await searchParams;
+
+    const { watches, pages } = await useGetData(`/api/watches?collection=${slug}`);
 
     if (!watches) return { notFound: true };
     return (
@@ -24,14 +25,12 @@ export default async function Page({ params }) {
             )}
             <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10">
                 {watches
-                    // .filter((p) => p.product_page == currentPage)
+                    .filter((p) => p.product_page == page)
                     .map((product) => (
-                        <ProductCard
-                            key={product.product.id}
-                            product={product}
-                        />
+                        <ProductCard key={product.product.id} product={product} />
                     ))}
             </div>
+            <Pagination pages={pages} page={page} currentPage={`/collections/${slug}`} />
         </div>
     );
 }

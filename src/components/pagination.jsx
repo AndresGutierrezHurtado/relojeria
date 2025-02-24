@@ -1,37 +1,44 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
-export default function Pagination({ pages, currentPage, setCurrentPage }) {
-    const pageNumbers = new Array(pages)
-        .fill(null)
-        .map((_, index) => index + 1);
+export default function Pagination({ pages, page, currentPage }) {
+    const router = useRouter();
+    const setCurrentPage = (newPage) => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+
+        router.push(`${currentPage}?page=${newPage}`);
+    };
 
     return (
         <div className="w-full flex justify-center">
             <div className="join">
                 <button
-                    disabled={currentPage == 1}
-                    onClick={() => setCurrentPage(currentPage + 1)}
+                    disabled={page == 1}
+                    onClick={() => setCurrentPage(parseInt(page) - 1)}
                     className="join-item btn"
                 >
                     anterior
                 </button>
-                {pageNumbers.map((page) => (
+                {Array.from({ length: pages }, (_, i) => i + 1).map((newPage) => (
                     <button
-                        key={page}
+                        key={newPage}
                         className="join-item btn"
-                        disabled={currentPage == page}
-                        onClick={() => setCurrentPage(page)}
+                        disabled={newPage == page}
+                        onClick={() => setCurrentPage(newPage)}
                     >
-                        {page}
+                        {newPage}
                     </button>
                 ))}
                 <button
-                    disabled={currentPage == pages}
-                    onClick={() => setCurrentPage(currentPage + 1)}
+                    disabled={page == pages}
+                    onClick={() => setCurrentPage(parseInt(page) + 1)}
                     className="join-item btn"
                 >
-                    siguente
+                    siguiente
                 </button>
             </div>
         </div>
