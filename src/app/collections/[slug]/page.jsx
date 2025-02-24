@@ -7,6 +7,11 @@ import { useGetData } from "@/hooks/useFetch";
 import ProductCard from "@/components/product";
 import Pagination from "@/components/pagination";
 
+export const metadata = {
+    title: "Marca | Tempus Elite",
+    description: "Tempus Elite - Tienda de relojes de lujo",
+};
+
 export default async function Page({ searchParams, params }) {
     const { slug } = await params;
     const { page = 1 } = await searchParams;
