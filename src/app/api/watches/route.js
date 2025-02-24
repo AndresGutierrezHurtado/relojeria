@@ -12,11 +12,11 @@ export async function GET(request) {
         const watches = [];
         const collection = searchParams.get("collection") || "rolexx";
 
-        if (cache.has(collection)) {
+        if (cache.has(collection) && Date.now() - cache.get(collection).timestamp < 600000) {
             return NextResponse.json({
                 success: true,
                 message: "Relojes obtenidos desde caché",
-                data: cache.get(collection),
+                data: cache.get(collection).data,
             });
         }
 
@@ -80,7 +80,10 @@ export async function GET(request) {
             )
         );
 
-        cache.set(collection, { watches, pages });
+        cache.set(collection, {
+            data: { watches, pages },
+            timestamp: Date.now(),
+        });
 
         return NextResponse.json({
             success: true,

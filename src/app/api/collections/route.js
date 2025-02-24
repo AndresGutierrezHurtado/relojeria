@@ -5,12 +5,12 @@ const cache = new Map();
 
 export async function GET() {
     try {
-        if (cache.has("collections")) {
+        if (cache.has("collections") && Date.now() - cache.get("collections").timestamp < 600000) {
             return NextResponse.json(
                 {
                     success: true,
                     message: "Marcas obtenidas desde caché",
-                    data: cache.get("collections"),
+                    data: cache.get("collections").data,
                 },
                 { status: 200 }
             );
@@ -42,21 +42,21 @@ export async function GET() {
             }
         });
 
-        cache.set(
-            "collections",
-            collections.filter(
+        cache.set("collections", {
+            timestamp: Date.now(),
+            data: collections.filter(
                 (c) =>
                     c.collection_slug !== "/gorras" &&
                     c.collection_slug !== "/business-academy" &&
                     c.collection_slug !== "/cajas-de-presentacion"
-            )
-        );
+            ),
+        });
 
         return NextResponse.json(
             {
                 success: true,
                 message: "Marcas obtenidas con éxito",
-                data: cache.get("collections"),
+                data: cache.get("collections").data,
             },
             { status: 200 }
         );
