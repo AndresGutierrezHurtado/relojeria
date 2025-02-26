@@ -36,7 +36,7 @@ export default async function Home() {
                             fortuna. Ofrecemos una amplia selección de relojes de las marcas más
                             prestigiosas del mundo, a precios que se adaptan a tu bolsillo.
                         </p>
-                        <Link href="https://wa.link/i0yu7k" target="_blank" className="text-4xl font-bold text-yellow-500 cursor-pointer hover:underline underline-offset-4 w-fit mx-auto md:mx-0">CONTACTANOS!</Link>
+                        <Link href="https://wa.link/4qkq4a" target="_blank" className="text-4xl font-bold text-yellow-500 cursor-pointer hover:underline underline-offset-4 w-fit mx-auto md:mx-0">CONTACTANOS!</Link>
                     </div>
                 </div>
             </section>
