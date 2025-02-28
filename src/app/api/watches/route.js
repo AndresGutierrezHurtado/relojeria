@@ -54,15 +54,20 @@ export async function GET(request) {
 
                 const productJSON = JSON.parse(product).product;
 
-                if (productImage && productName && productPrice && productDiscount && productJSON) {
+                if (
+                    productImage &&
+                    productName &&
+                    (productPrice || productDiscount) &&
+                    productJSON
+                ) {
                     watches.push({
                         product_image: productImage,
                         product_name: productName,
                         product_price: parseInt(
-                            productPrice.replace("$", "").replace(",00", "").replaceAll(".", "")
+                            (productPrice || productDiscount).replace("$", "").replace(",00", "").replaceAll(".", "")
                         ),
                         product_discount: parseInt(
-                            productDiscount.replace("$", "").replace(",00", "").replaceAll(".", "")
+                            (productDiscount || productPrice).replace("$", "").replace(",00", "").replaceAll(".", "")
                         ),
                         product_description: productJSON.description,
                         product_availability: productJSON.available,

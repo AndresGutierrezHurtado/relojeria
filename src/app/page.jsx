@@ -111,7 +111,6 @@ export default async function Home() {
                         width={32}
                         height={32}
                         className="object-cover"
-                      />
                     </div>
                   ))}
                 </div>
