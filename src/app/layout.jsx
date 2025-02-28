@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
                     </div>
                 </main>
                 <Link target="_blank" href="https://wa.link/4qkq4a" className="fixed bottom-[10vh] right-[5vw]">
-                    <button className="btn btn-success bg-green-500 text-white px-5 h-auto rounded-[99px] animate-bounce hover:animate-none duration-300">
+                    <button className="btn btn-success bg-green-500 text-white px-5 h-auto rounded-[99px] animate-bounce-slow hover:animate-none duration-300">
                         <svg
                             viewBox="0 0 22 22"
                             fill="none"
