@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
                                     className="object-contain"
                                     width={150}
                                     height={150}
-                                    priority
                                 />
                                 <h1 className="text-white text-4xl font-bold">Tempus Elite</h1>
                             </div>
