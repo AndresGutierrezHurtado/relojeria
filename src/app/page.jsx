@@ -89,19 +89,9 @@ export default async function Home() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                                <Button
-                                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 h-auto rounded-[0.375rem] transition-all duration-300 shadow-lg shadow-yellow-500/20"
-                                >
-                                    Explorar Colección
-                                </Button>
+                                <Button>Explorar Colección</Button>
                                 <Link href="https://wa.link/i0yu7k" target="_blank">
-                                    <Button
-                                        variant="outline"
-                                        className="border-yellow-500/30 hover:border-yellow-500 text-white hover:text-yellow-500 font-medium px-8 py-6 h-auto rounded-[0.375rem] transition-all duration-300"
-                                        style={{ borderRadius: "0.5rem" }}
-                                    >
-                                        Contáctanos
-                                    </Button>
+                                    <Button variant="outline">Contáctanos</Button>
                                 </Link>
                             </div>
 
@@ -191,9 +181,7 @@ export default async function Home() {
                             </p>
 
                             <Link href="/collections/combos">
-                                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 h-auto rounded-[0.375rem] transition-all duration-300 shadow-lg shadow-yellow-500/20 w-fit">
-                                    Ver Todos los Combos
-                                </Button>
+                                <Button>Ver Todos los Combos</Button>
                             </Link>
                         </div>
 
@@ -289,11 +277,9 @@ export default async function Home() {
                                 <input
                                     type="email"
                                     placeholder="Tu correo electrónico"
-                                    className="flex-1 px-4 py-3 rounded-[0.375rem] bg-gray-800 border border-gray-700 focus:border-yellow-500 focus:outline-none"
+                                    className="flex-1 px-4 py-2 rounded-[0.375rem] bg-gray-800 border border-gray-700 focus:border-yellow-500 focus:outline-none"
                                 />
-                                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-6 py-3 h-auto rounded-[0.375rem] transition-all duration-300">
-                                    Suscribirse
-                                </Button>
+                                <Button>Suscribirse</Button>
                             </div>
 
                             <p className="text-xs text-gray-500">

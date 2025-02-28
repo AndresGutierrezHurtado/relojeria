@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
     return (
         <>
             <Tilt
-                className="p-7 bg-stone-100/[.05] rounded-[0.5rem] bg-blur-xl text-white flex flex-col gap-5 overflow-hidden"
+                className="p-7 bg-stone-100/[.05] rounded-[0.5rem] bg-blur-xl text-white flex flex-col gap-5 overflow-hidden cursor-default"
                 glareEnable={true}
                 glareMaxOpacity={0.3}
                 tiltMaxAngleX={10}
@@ -30,7 +30,7 @@ export default function ProductCard({ product }) {
                         </p>
                     )}
                 </figure>
-                <div className="flex flex-col gap-2 flex-grow cursor-grab active:cursor-grabbing">
+                <div className="flex flex-col gap-2 flex-grow">
                     <h2 className="text-2xl font-bold leading-[1.1] text-center flex-grow">
                         {product.product_name}
                     </h2>

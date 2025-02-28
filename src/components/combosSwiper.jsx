@@ -27,7 +27,7 @@ export default function CombosSwiper({ combos }) {
             className="w-full h-full"
         >
             {combos.map((combo) => (
-                <SwiperSlide key={combo.product.id} className="pb-12">
+                <SwiperSlide key={combo.product.id} className="pb-12 py-1 cursor-grab active:cursor-grabbing">
                     <ProductCard product={combo} />
                 </SwiperSlide>
             ))}
