@@ -6,13 +6,13 @@ export default function ProductCard({ product }) {
     return (
         <>
             <Tilt
-                className="p-7 bg-stone-100/[.05] rounded-lg bg-blur-xl text-white flex flex-col gap-5 overflow-hidden"
+                className="p-7 bg-stone-100/[.05] rounded-[0.5rem] bg-blur-xl text-white flex flex-col gap-5 overflow-hidden"
                 glareEnable={true}
                 glareMaxOpacity={0.3}
                 tiltMaxAngleX={10}
                 tiltMaxAngleY={15}
             >
-                <figure className="relative w-full aspect-square rounded-lg overflow-hidden cursor-pointer duration-300 hover:grayscale-[40%]">
+                <figure className="relative w-full aspect-square rounded-[0.5rem] overflow-hidden cursor-pointer duration-300 hover:grayscale-[40%]">
                     <img
                         onClick={() =>
                             document.getElementById(`modal-${product.product_name}`).showModal()
@@ -30,7 +30,7 @@ export default function ProductCard({ product }) {
                         </p>
                     )}
                 </figure>
-                <div className="flex flex-col gap-2 flex-grow">
+                <div className="flex flex-col gap-2 flex-grow cursor-grab active:cursor-grabbing">
                     <h2 className="text-2xl font-bold leading-[1.1] text-center flex-grow">
                         {product.product_name}
                     </h2>
@@ -49,7 +49,7 @@ export default function ProductCard({ product }) {
                         </button>
                     </form>
                     <div className="flex flex-col md:flex-row gap-10">
-                        <div className="w-full md:w-1/2 pt-5 md:pt-0 rounded-lg bg-black/50 flex items-center overflow-hidden">
+                        <div className="w-full md:w-1/2 pt-5 md:pt-0 rounded-[0.5rem] bg-black/50 flex items-center overflow-hidden">
                             <img
                                 src={product.product_image}
                                 alt={`imagen del producto ${product.product_name}`}

@@ -5,6 +5,8 @@ import { Instagram, Facebook, Twitter, Clock, ChevronRight, Mail } from "lucide-
 // Components
 import CombosSwiper from "@/components/combosSwiper";
 import ModelViewer from "@/components/modelViewer";
+import CategoryCard from "@/components/categoryCard";
+import TestimonialCard from "@/components/testimonialCard";
 import { Button } from "@/components/ui/button";
 
 // Hooks
@@ -22,8 +24,8 @@ export default async function Home() {
     if (!combos) return { notFound: true };
 
     return (
-        <main className="flex flex-col space-y-24 pb-24">
-            <section className="relative w-full min-h-[90vh] flex items-center">
+        <main className="flex flex-col space-y-[150px] pb-24">
+            <section className="relative w-full flex pt-[60px] pb-[50px] items-center">
                 <div className="container mx-auto px-4 py-16 relative z-10">
                     <div className="absolute top-0 right-4 md:right-10 flex flex-col gap-4 py-4">
                         <Link
@@ -88,15 +90,14 @@ export default async function Home() {
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                                 <Button
-                                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 h-auto rounded-md transition-all duration-300 shadow-lg shadow-yellow-500/20"
-                                    style={{ borderRadius: "0.5rem" }}
+                                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 h-auto rounded-[0.375rem] transition-all duration-300 shadow-lg shadow-yellow-500/20"
                                 >
                                     Explorar Colección
                                 </Button>
                                 <Link href="https://wa.link/i0yu7k" target="_blank">
                                     <Button
                                         variant="outline"
-                                        className="border-yellow-500/30 hover:border-yellow-500 text-white hover:text-yellow-500 font-medium px-8 py-6 h-auto rounded-md transition-all duration-300"
+                                        className="border-yellow-500/30 hover:border-yellow-500 text-white hover:text-yellow-500 font-medium px-8 py-6 h-auto rounded-[0.375rem] transition-all duration-300"
                                         style={{ borderRadius: "0.5rem" }}
                                     >
                                         Contáctanos
@@ -190,7 +191,7 @@ export default async function Home() {
                             </p>
 
                             <Link href="/collections/combos">
-                                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 h-auto rounded-md transition-all duration-300 shadow-lg shadow-yellow-500/20 w-fit">
+                                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 h-auto rounded-[0.375rem] transition-all duration-300 shadow-lg shadow-yellow-500/20 w-fit">
                                     Ver Todos los Combos
                                 </Button>
                             </Link>
@@ -288,9 +289,9 @@ export default async function Home() {
                                 <input
                                     type="email"
                                     placeholder="Tu correo electrónico"
-                                    className="flex-1 px-4 py-3 rounded-md bg-gray-800 border border-gray-700 focus:border-yellow-500 focus:outline-none"
+                                    className="flex-1 px-4 py-3 rounded-[0.375rem] bg-gray-800 border border-gray-700 focus:border-yellow-500 focus:outline-none"
                                 />
-                                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-6 py-3 h-auto rounded-md transition-all duration-300">
+                                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-6 py-3 h-auto rounded-[0.375rem] transition-all duration-300">
                                     Suscribirse
                                 </Button>
                             </div>
@@ -306,57 +307,5 @@ export default async function Home() {
                 </div>
             </section>
         </main>
-    );
-}
-
-function CategoryCard({ href, image, title }) {
-    return (
-        <Link
-            href={href}
-            className="group relative overflow-hidden rounded-xl flex flex-col items-center transition-transform duration-300 hover:-translate-y-2"
-        >
-            <div className="relative w-full aspect-square overflow-hidden rounded-xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
-                <Image
-                    src={image || "/placeholder.svg"}
-                    alt={`Categoría ${title}`}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-            </div>
-            <div className="absolute bottom-0 left-0 w-full p-4 z-20">
-                <h3 className="text-xl font-medium text-center">{title}</h3>
-                <div className="w-10 h-0.5 bg-yellow-500 mx-auto mt-2 transition-all duration-300 group-hover:w-16"></div>
-            </div>
-        </Link>
-    );
-}
-
-function TestimonialCard({ quote, author, role }) {
-    return (
-        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 flex flex-col gap-4 hover:border-yellow-500/30 transition-colors duration-300">
-            <div className="text-yellow-500">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-                </svg>
-            </div>
-            <p className="text-gray-300 italic">{quote}</p>
-            <div className="mt-auto pt-4 border-t border-gray-800">
-                <p className="font-medium">{author}</p>
-                <p className="text-sm text-gray-400">{role}</p>
-            </div>
-        </div>
     );
 }
