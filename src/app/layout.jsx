@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+// Components
+import Button from "@/components/ui/button";
+
 export default function RootLayout({ children }) {
     const pathname = usePathname();
 
@@ -26,9 +29,7 @@ export default function RootLayout({ children }) {
                                     height={150}
                                     priority
                                 />
-                                <h1 className="text-white text-4xl font-bold">
-                                    Tempus Elite
-                                </h1>
+                                <h1 className="text-white text-4xl font-bold">Tempus Elite</h1>
                             </div>
                             <ul className="flex gap-8 justify-center border-t-2 border-yellow-400 pt-4 text-xl">
                                 <li
@@ -40,22 +41,18 @@ export default function RootLayout({ children }) {
                                 </li>
                                 <li
                                     className={`hover:text-yellow-400 hover:scale-[1.1] duration-300 cursor-pointer px-1 py-0.5 ${
-                                        pathname == "/collections" &&
-                                        "text-yellow-400"
+                                        pathname == "/collections" && "text-yellow-400"
                                     }`}
                                 >
                                     <Link href="/collections">Marcas</Link>
                                 </li>
                                 <li
                                     className={`hover:text-yellow-400 hover:scale-[1.1] duration-300 cursor-pointer px-1 py-0.5 truncate ${
-                                        pathname ==
-                                            "/collections/lo-mas-vendido" &&
+                                        pathname == "/collections/lo-mas-vendido" &&
                                         "text-yellow-400"
                                     }`}
                                 >
-                                    <Link href="/collections/lo-mas-vendido">
-                                        Lo Más Vendido
-                                    </Link>
+                                    <Link href="/collections/lo-mas-vendido">Lo Más Vendido</Link>
                                 </li>
                             </ul>
                         </div>
@@ -64,8 +61,12 @@ export default function RootLayout({ children }) {
                         {children}
                     </div>
                 </main>
-                <Link target="_blank" href="https://wa.link/4qkq4a" className="fixed bottom-[10vh] right-[5vw] z-50">
-                    <button className="btn btn-success bg-green-500 text-white px-5 h-auto rounded-[99px] animate-bounce-slow hover:animate-none duration-300">
+                <Link
+                    target="_blank"
+                    href="https://wa.link/4qkq4a"
+                    className="fixed bottom-[10vh] right-[5vw] z-50"
+                >
+                    <Button variant="success" rounded="circle" className="px-6">
                         <svg
                             viewBox="0 0 22 22"
                             fill="none"
@@ -87,7 +88,7 @@ export default function RootLayout({ children }) {
                             ></path>
                         </svg>
                         Envíanos un mensaje
-                    </button>
+                    </Button>
                 </Link>
             </body>
         </html>

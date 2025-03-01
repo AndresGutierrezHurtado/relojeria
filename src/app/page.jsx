@@ -7,7 +7,7 @@ import CombosSwiper from "@/components/combosSwiper";
 import ModelViewer from "@/components/modelViewer";
 import CategoryCard from "@/components/categoryCard";
 import TestimonialCard from "@/components/testimonialCard";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 
 // Hooks
 import { useGetData } from "@/hooks/useFetch";
@@ -108,7 +108,7 @@ export default async function Home() {
                         </div>
                     </div>
 
-                    <div className="absolute bottom-[-3rem] left-[32rem] transform -translate-x-1/2 flex flex-col items-center gap-2  animate-bounce-slow">
+                    <div className="absolute bottom-[-3rem] left-[32rem] transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
                         <span className="text-xl  text-white-400">Descubre más</span>
                         <ChevronRight className="w-5 h-5 text-yellow-500 rotate-90" />
                     </div>
