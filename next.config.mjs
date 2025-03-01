@@ -1,14 +1,9 @@
 /** @type {import('next').NextConfig} */
 export default {
     images: {
-        remotePatterns: [
-            {
-                protocol: "http",
-                hostname: "www.businesscolombia.shop",
-            },
-        ],
-    },
-    eslint: {
-        ignoreDuringBuilds: true,
+        domains: ["www.businesscolombia.shop"],
+        formats: ["image/avif", "image/webp"],
+        dangerouslyAllowSVG: true,
+        unoptimized: true,
     }
 };
