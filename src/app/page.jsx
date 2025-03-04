@@ -237,25 +237,25 @@ export default async function Home() {
 
                     <div className="grid md:grid-cols-3 gap-6">
                         <TestimonialCard
-                            quote="Los relojes de Tempus Elite han superado mis expectativas. La calidad es excepcional y el servicio al cliente es impecable."
-                            author="Carlos Mendoza"
-                            role="Cliente desde 2021"
+                            quote="Es un reloj de excelente calidad. Cumplieron con los tiempos de entrega y su precio es muy accesible. ¡Totalmente recomendado!"
+                            author="Juan Esteban López Palacios"
+                            role="Cliente desde el 2025"
                         />
                         <TestimonialCard
                             quote="Compré un combo de relojes como regalo para mi esposo y quedó encantado. Definitivamente volveré a comprar aquí."
-                            author="María Fernández"
-                            role="Cliente desde 2022"
+                            author="Maria Cifuentes"
+                            role="Cliente desde 2024"
                         />
                         <TestimonialCard
                             quote="La relación calidad-precio es inmejorable. He comprado varios relojes y todos han sido exactamente como se describen."
                             author="Javier Rodríguez"
-                            role="Cliente desde 2020"
+                            role="Cliente desde 2025"
                         />
                     </div>
                 </div>
             </section>
 
-            <section className="w-full px-4">
+            {/* <section className="w-full px-4">
                 <div className="container mx-auto max-w-4xl">
                     <div className="border border-yellow-500/20 rounded-2xl p-8 md:p-12 relative overflow-hidden">
                         <div className="relative z-10 flex flex-col items-center text-center gap-6">
@@ -291,7 +291,7 @@ export default async function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </main>
     );
 }
