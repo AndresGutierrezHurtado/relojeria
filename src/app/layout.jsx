@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
                     href="https://wa.link/4qkq4a"
                     className="fixed bottom-[10vh] right-[5vw] z-50"
                 >
-                    <Button variant="success" rounded="circle" className="px-6">
+                    <Button variant="success" rounded="circle" className="px-6 scale-90 sm:scale-100 xl:scale-105">
                         <svg
                             viewBox="0 0 22 22"
                             fill="none"

@@ -103,14 +103,14 @@ export default async function Home() {
                             </div>
                         </div>
 
-                        <div className="w-full md:w-1/2 flex justify-center items-center">
+                        <div className="hidden sm:block w-full md:w-1/2 flex justify-center items-center">
                             <div className="relative w-full max-w-[500px] h-[500px] animate-float">
                                 <ModelViewer />
                             </div>
                         </div>
                     </div>
 
-                    <div className="absolute bottom-[-3rem] left-[32rem] transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+                    <div className="absolute bottom-[-3rem] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
                         <span className="text-xl  text-white-400">Descubre más</span>
                         <ChevronRight className="w-5 h-5 text-yellow-500 rotate-90" />
                     </div>
@@ -132,7 +132,7 @@ export default async function Home() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+                    <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6 md:gap-10">
                         <CategoryCard
                             href="/collections/rolexx"
                             image="http://www.businesscolombia.shop/cdn/shop/files/gempages_542554070993339638-136e5a94-17fe-4a69-a9e8-eb98f44edfae.jpg?v=11092526891830783607"
