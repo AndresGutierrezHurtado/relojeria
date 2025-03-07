@@ -20,6 +20,9 @@ export async function GET(request) {
             });
         }
 
+        const parsePrice = (price) =>
+            parseInt(price.replace("$", "").replace(",00", "").replaceAll(".", ""));
+
         const getPages = async (url) => {
             const response = await fetch(url);
             const $ = cheerio.load(await response.text());
@@ -42,37 +45,27 @@ export async function GET(request) {
             $("gp-product").each((index, element) => {
                 const productImage = $(element).find("gp-product-images-v2 img").attr("data-src");
                 const productName = $(element).find("gp-text h2                 ").text().trim();
-                const productPrice = $(element)
+                let productPrice = $(element)
                     .find("gp-product div:nth-of-type(2) div:nth-child(2) gp-text")
                     .text()
                     .trim();
-                const productDiscount = $(element)
-                    .find("gp-product gp-product-price")
-                    .text()
-                    .trim();
-                const product = $(element).find("gp-product-images-v2").attr("gp-data");
+                let productDiscount = $(element).find("gp-product gp-product-price").text().trim();
+                const { product } = JSON.parse(
+                    $(element).find("gp-product-images-v2").attr("gp-data")
+                );
 
-                const productJSON = JSON.parse(product).product;
-
-                if (
-                    productImage &&
-                    productName &&
-                    (productPrice || productDiscount) &&
-                    productJSON
-                ) {
+                productPrice = parsePrice(productPrice);
+                productDiscount = parsePrice(productDiscount);
+                if (productImage && productName && (productPrice || productDiscount)) {
                     watches.push({
                         product_image: productImage,
                         product_name: productName,
-                        product_price: parseInt(
-                            (productPrice || productDiscount).replace("$", "").replace(",00", "").replaceAll(".", "")
-                        ),
-                        product_discount: parseInt(
-                            (productDiscount || productPrice).replace("$", "").replace(",00", "").replaceAll(".", "")
-                        ),
-                        product_description: productJSON.description,
-                        product_availability: productJSON.available,
+                        product_price: productPrice || productDiscount * 2,
+                        product_discount: productDiscount || productPrice / 2,
+                        product_description: product.description,
+                        product_availability: product.available,
                         product_page: page,
-                        product: productJSON,
+                        product,
                     });
                 }
             });
@@ -96,6 +89,7 @@ export async function GET(request) {
             data: { watches, pages },
         });
     } catch (error) {
+        console.log(error);
         return NextResponse.json({
             success: false,
             message: "Error al obtener los relojes",
