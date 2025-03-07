@@ -4,8 +4,17 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useState, useEffect, useRef, Suspense } from "react";
 import * as THREE from "three";
 
+const modelCache = new Map();
+
+const useCachedGLTF = (url) => {
+    if (modelCache.has(url)) return modelCache.get(url);
+    const model = useGLTF(url);
+    modelCache.set(url, model);
+    return model;
+};
+
 const Model = () => {
-    const { scene } = useGLTF("/scene.glb");
+    const { scene } = useCachedGLTF("/scene.glb");
 
     const secondsPointer = scene.getObjectByName("Cylinder013");
     const minutePointer = scene.getObjectByName("Cylinder016");

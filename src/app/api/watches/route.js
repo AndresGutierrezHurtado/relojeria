@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import * as cheerio from "cheerio";
 
-const cache = new Map();
+if (!global.cache) {
+    global.cache = new Map();
+}
 
 export async function GET(request) {
     try {
@@ -12,11 +14,11 @@ export async function GET(request) {
         const watches = [];
         const collection = searchParams.get("collection") || "rolexx";
 
-        if (cache.has(collection) && Date.now() - cache.get(collection).timestamp < 600000) {
+        if (global.cache.has(collection) && Date.now() - global.cache.get(collection).timestamp < 600000) {
             return NextResponse.json({
                 success: true,
                 message: "Relojes obtenidos desde caché",
-                data: cache.get(collection).data,
+                data: global.cache.get(collection).data,
             });
         }
 
@@ -78,7 +80,7 @@ export async function GET(request) {
             )
         );
 
-        cache.set(collection, {
+        global.cache.set(collection, {
             data: { watches, pages },
             timestamp: Date.now(),
         });

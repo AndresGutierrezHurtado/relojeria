@@ -1,16 +1,18 @@
 import { NextResponse } from "next/server";
 import * as cheerio from "cheerio";
 
-const cache = new Map();
+if (!global.cache) {
+    global.cache = new Map();
+}
 
 export async function GET() {
     try {
-        if (cache.has("collections") && Date.now() - cache.get("collections").timestamp < 600000) {
+        if (global.cache.has("collections") && Date.now() - global.cache.get("collections").timestamp < 600000) {
             return NextResponse.json(
                 {
                     success: true,
                     message: "Marcas obtenidas desde caché",
-                    data: cache.get("collections").data,
+                    data: global.cache.get("collections").data,
                 },
                 { status: 200 }
             );
@@ -42,7 +44,7 @@ export async function GET() {
             }
         });
 
-        cache.set("collections", {
+        global.cache.set("collections", {
             timestamp: Date.now(),
             data: collections.filter(
                 (c) =>
@@ -56,7 +58,7 @@ export async function GET() {
             {
                 success: true,
                 message: "Marcas obtenidas con éxito",
-                data: cache.get("collections").data,
+                data: global.cache.get("collections").data,
             },
             { status: 200 }
         );
