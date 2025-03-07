@@ -4,6 +4,8 @@ import React from "react";
 import { useGetData } from "@/hooks/useFetch";
 import Collection from "@/components/collection";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
     title: "Marcas | Tempus Elite",
 };

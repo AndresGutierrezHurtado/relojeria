@@ -12,6 +12,8 @@ import Button from "@/components/ui/button";
 // Hooks
 import { useGetData } from "@/hooks/useFetch";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
     title: "Inicio | Tempus Elite",
     description:
