@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Facebook, Twitter, Clock, ChevronRight, Mail } from "lucide-react";
+import { Instagram, Music2, UserRound, Clock, ChevronRight, Mail, Facebook } from "lucide-react";
 
 // Components
 import CombosSwiper from "@/components/combosSwiper";
@@ -29,7 +29,7 @@ export default async function Home() {
         <main className="flex flex-col space-y-[150px] pb-24">
             <section className="relative w-full flex pt-[60px] pb-[50px] items-center">
                 <div className="container mx-auto px-4 py-16 relative z-10">
-                    <div className="absolute top-0 right-4 md:right-10 flex flex-col gap-4 py-4">
+                    <div className="absolute top-0 right-4 md:right-10 flex flex-col gap-4 py-4 z-[1]">
                         <Link
                             href="https://instagram.com"
                             target="_blank"
@@ -37,6 +37,14 @@ export default async function Home() {
                             className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
                         >
                             <Instagram className="w-5 h-5" />
+                        </Link>
+                        <Link
+                            href="https://www.tiktok.com/@tempus_elite_colombia?lang=es"
+                            target="_blank"
+                            aria-label="Tiktok"
+                            className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
+                        >
+                            <Music2 className="w-5 h-5" />
                         </Link>
                         <Link
                             href="https://facebook.com"
@@ -47,15 +55,7 @@ export default async function Home() {
                             <Facebook className="w-5 h-5" />
                         </Link>
                         <Link
-                            href="https://twitter.com"
-                            target="_blank"
-                            aria-label="Twitter"
-                            className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
-                        >
-                            <Twitter className="w-5 h-5" />
-                        </Link>
-                        <Link
-                            href="mailto:info@tempuselite.com"
+                            href={`mailto:tempuselitesco@gmail.com?subject=Consulta%20desde%20el%20sitio%20web`}
                             aria-label="Email"
                             className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
                         >
@@ -97,9 +97,9 @@ export default async function Home() {
                                 </Link>
                             </div>
 
-                            <div className="text-sm text-gray-400 pt-2">
-                                <span className="text-yellow-500 font-medium">+100</span> clientes
-                                satisfechos
+                            <div className="text-sm text-gray-400 flex items-center gap-1">
+                            <UserRound className="text-yellow-500 w-5 h-5" />
+                            <span className="text-yellow-500 font-medium">+100</span> clientes satisfechos
                             </div>
                         </div>
 
@@ -257,43 +257,83 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* <section className="w-full px-4">
-                <div className="container mx-auto max-w-4xl">
-                    <div className="border border-yellow-500/20 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-                        <div className="relative z-10 flex flex-col items-center text-center gap-6">
-                            <div className="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                                <Clock className="w-6 h-6 text-yellow-500" />
-                            </div>
+            <section className="w-full px-4">
+        <div className="container mx-auto">
+          <div className="flex flex-col gap-2 mb-12 text-center">
+            <span className="text-yellow-500 text-sm font-medium tracking-wider uppercase">Nuestra Historia</span>
+            <h2 className="text-3xl md:text-4xl font-bold">Quienes Somos</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Conoce más sobre Tempus Elite y nuestra pasión por la elegancia.
+            </p>
+          </div>
 
-                            <div className="space-y-2">
-                                <h2 className="text-3xl md:text-4xl font-bold">
-                                    Mantente Informado
-                                </h2>
-                                <p className="text-gray-400 max-w-xl">
-                                    Suscríbete para recibir las últimas novedades, ofertas
-                                    exclusivas y lanzamientos de nuevas colecciones.
-                                </p>
-                            </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-8 order-2 md:order-1 ">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-yellow-500">
+                   Descubre el lujo y la elegancia en cada segundo 
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  En Tempus Elite, fundada por <span className="text-yellow-500 font-medium">Andres Gutierrez</span> y{" "}
+                  <span className="text-yellow-500 font-medium">Kevin Parra</span>, creemos que un reloj no
+                  es solo un accesorio, sino una declaración de estilo y estatus. 
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Ofrecemos una selección exclusiva de relojes que combinan diseño, confort y sofisticación,
+                  permitiéndote experimentar la satisfacción de llevar una pieza única en tu muñeca.
+                </p>
+              </div>
 
-                            <div className="w-full max-w-md flex flex-col sm:flex-row gap-3">
-                                <input
-                                    type="email"
-                                    placeholder="Tu correo electrónico"
-                                    className="flex-1 px-4 py-2 rounded-[0.375rem] bg-gray-800 border border-gray-700 focus:border-yellow-500 focus:outline-none"
-                                />
-                                <Button>Suscribirse</Button>
-                            </div>
-
-                            <p className="text-xs text-gray-500">
-                                Al suscribirte, aceptas nuestra{" "}
-                                <Link href="/privacy" className="text-yellow-500 hover:underline">
-                                    Política de Privacidad
-                                </Link>
-                            </p>
-                        </div>
-                    </div>
+              <div className="grid grid-cols-1 gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                  <p className="text-gray-200">Calidad excepcional a precios inigualables</p>
                 </div>
-            </section> */}
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                  <p className="text-gray-200">Atención personalizada para ayudarte a elegir el diseño perfecto</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                  <p className="text-gray-200">Estilo, exclusividad y distinción en cada detalle</p>
+                </div>
+              </div>
+
+              <div className="bg-gray-900/50 rounded-xl p-6 border border-yellow-500/20">
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 ">
+                    <Clock className="w-6 h-6 text-yellow-500" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold">Visítanos en Bogotá, Colombia</h4>
+                    <p className="text-gray-400">
+                      Déjanos acompañarte en la elección del reloj que refleje tu personalidad y eleve tu estilo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="https://wa.link/i0yu7k" target="_blank">
+                <Button>📩 Contáctanos y encuentra el reloj ideal para ti</Button>
+              </Link>
+            </div>
+
+            <div className="relative order-1 md:order-2 ">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden p-6">
+              <Image
+                  src="/rolexx.webp"
+                  alt="Hero"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />                
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500/10 rounded-full blur-xl"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-yellow-500/10 rounded-full blur-xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
         </main>
     );
 }
