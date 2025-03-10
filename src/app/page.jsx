@@ -98,8 +98,9 @@ export default async function Home() {
                             </div>
 
                             <div className="text-sm text-gray-400 flex items-center gap-1">
-                            <UserRound className="text-yellow-500 w-5 h-5" />
-                            <span className="text-yellow-500 font-medium">+100</span> clientes satisfechos
+                                <UserRound className="text-yellow-500 w-5 h-5" />
+                                <span className="text-yellow-500 font-medium">+100</span> clientes
+                                satisfechos
                             </div>
                         </div>
 
@@ -258,82 +259,100 @@ export default async function Home() {
             </section>
 
             <section className="w-full px-4">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-2 mb-12 text-center">
-            <span className="text-yellow-500 text-sm font-medium tracking-wider uppercase">Nuestra Historia</span>
-            <h2 className="text-3xl md:text-4xl font-bold">Quienes Somos</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Conoce más sobre Tempus Elite y nuestra pasión por la elegancia.
-            </p>
-          </div>
+                <div className="container mx-auto">
+                    <div className="flex flex-col gap-2 mb-12 text-center">
+                        <span className="text-yellow-500 text-sm font-medium tracking-wider uppercase">
+                            Nuestra Historia
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-bold">Quienes Somos</h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto">
+                            Conoce más sobre Tempus Elite y nuestra pasión por la elegancia.
+                        </p>
+                    </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-8 order-2 md:order-1 ">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-yellow-500">
-                   Descubre el lujo y la elegancia en cada segundo 
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  En Tempus Elite, fundada por <span className="text-yellow-500 font-medium">Andres Gutierrez</span> y{" "}
-                  <span className="text-yellow-500 font-medium">Kevin Parra</span>, creemos que un reloj no
-                  es solo un accesorio, sino una declaración de estilo y estatus. 
-                </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Ofrecemos una selección exclusiva de relojes que combinan diseño, confort y sofisticación,
-                  permitiéndote experimentar la satisfacción de llevar una pieza única en tu muñeca.
-                </p>
-              </div>
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="flex flex-col gap-8 order-2 md:order-1 ">
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold text-yellow-500">
+                                    Descubre el lujo y la elegancia en cada segundo
+                                </h3>
+                                <p className="text-gray-300 leading-relaxed">
+                                    En Tempus Elite, fundada por{" "}
+                                    <span className="text-yellow-500 font-medium">
+                                        Andres Gutierrez
+                                    </span>{" "}
+                                    y{" "}
+                                    <span className="text-yellow-500 font-medium">Kevin Parra</span>
+                                    , creemos que un reloj no es solo un accesorio, sino una
+                                    declaración de estilo y estatus.
+                                </p>
+                                <p className="text-gray-300 leading-relaxed">
+                                    Ofrecemos una selección exclusiva de relojes que combinan
+                                    diseño, confort y sofisticación, permitiéndote experimentar la
+                                    satisfacción de llevar una pieza única en tu muñeca.
+                                </p>
+                            </div>
 
-              <div className="grid grid-cols-1 gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                  <p className="text-gray-200">Calidad excepcional a precios inigualables</p>
+                            <div className="grid grid-cols-1 gap-4">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                    <p className="text-gray-200">
+                                        Calidad excepcional a precios inigualables
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                    <p className="text-gray-200">
+                                        Atención personalizada para ayudarte a elegir el diseño
+                                        perfecto
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                    <p className="text-gray-200">
+                                        Estilo, exclusividad y distinción en cada detalle
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="bg-gray-900/50 rounded-xl p-6 border border-yellow-500/20">
+                                <div className="flex flex-col sm:flex-row items-center gap-4">
+                                    <div className="flex items-center justify-center w-12 h-12 ">
+                                        <Clock className="w-6 h-6 text-yellow-500" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-lg font-bold">
+                                            Visítanos en Bogotá, Colombia
+                                        </h4>
+                                        <p className="text-gray-400">
+                                            Déjanos acompañarte en la elección del reloj que refleje
+                                            tu personalidad y eleve tu estilo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <Link href="https://wa.link/i0yu7k" target="_blank">
+                                <Button>📩 Contáctanos y encuentra el reloj ideal para ti</Button>
+                            </Link>
+                        </div>
+
+                        <div className="relative order-1 md:order-2 ">
+                            <div className="relative w-full aspect-square rounded-xl overflow-hidden p-6">
+                                <Image
+                                    src="/rolexx.webp"
+                                    alt="Hero"
+                                    width={600}
+                                    height={600}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500/[0.03] rounded-full blur-xl"></div>
+                            <div className="absolute -top-6 -left-6 w-32 h-32 bg-yellow-500/[0.03] rounded-full blur-xl"></div>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                  <p className="text-gray-200">Atención personalizada para ayudarte a elegir el diseño perfecto</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                  <p className="text-gray-200">Estilo, exclusividad y distinción en cada detalle</p>
-                </div>
-              </div>
-
-              <div className="bg-gray-900/50 rounded-xl p-6 border border-yellow-500/20">
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div className="flex items-center justify-center w-12 h-12 ">
-                    <Clock className="w-6 h-6 text-yellow-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold">Visítanos en Bogotá, Colombia</h4>
-                    <p className="text-gray-400">
-                      Déjanos acompañarte en la elección del reloj que refleje tu personalidad y eleve tu estilo.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <Link href="https://wa.link/i0yu7k" target="_blank">
-                <Button>📩 Contáctanos y encuentra el reloj ideal para ti</Button>
-              </Link>
-            </div>
-
-            <div className="relative order-1 md:order-2 ">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden p-6">
-              <Image
-                  src="/rolexx.webp"
-                  alt="Hero"
-                  width={600}
-                  height={600}
-                  className="w-full h-full object-cover"
-                />                
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500/10 rounded-full blur-xl"></div>
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-yellow-500/10 rounded-full blur-xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
         </main>
     );
 }
