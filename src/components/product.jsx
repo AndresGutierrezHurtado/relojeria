@@ -39,6 +39,11 @@ export default function ProductCard({ product }) {
                             ? "Agotado"
                             : product.product_price.toLocaleString("es-CO") + " COP"}
                     </p>
+                    <p className="text-2xl font-bold text-gray-400 text-center line-through">
+                        {!product.product_availability
+                            ? ""
+                            :( product.product_price * 1.5).toLocaleString("es-CO") + " COP"}
+                    </p>
                 </div>
             </Tilt>
             <dialog id={`modal-${product.product_name}`} className="modal px-3">
